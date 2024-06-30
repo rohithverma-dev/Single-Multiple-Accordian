@@ -1,0 +1,48 @@
+body{
+  background-color: rgba(52, 52, 52, 0.667);
+}
+
+.container{
+  width: 80%;
+  border-radius: 20px;
+  margin: 100px auto;
+  /* background-color: pink; */
+}
+
+
+.accordian{
+  margin: 30px 20px ;
+}
+.container .accordian .title{
+  background-color: rgba(0, 0, 0, 0.807);
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+}
+.container .accordian .detail{
+  background-color: black;
+  color: white;
+  padding: 20px;
+  font-weight: bold;
+}
+
+.detail_off{
+  display: none;
+}
+
+.singlle-multiple-accordian{
+  width: 30%;
+  margin: 20px auto;
+  margin-top: 60px;
+  color: yellow;
+  font-size: 30px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.singlle-multiple-accordian:hover{
+  background-color: blue;
+}
+
+
