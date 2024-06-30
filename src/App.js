@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
 function App() {
   const acc_arr = [
@@ -23,20 +23,31 @@ function App() {
     },
   ];
 
-
   const [AcName, setAcName] = useState([]);
-
+  const [single, setSingle] = useState(true);
 
   const handleSetAcName = (id) => {
     setAcName((prev) => {
-        return prev.includes(id) ? prev.filter((acId) => acId !== id) : [...prev, id];
+      if (single) {
+        return prev.includes(id) ? [] : [id];
+      } else {
+        return prev.includes(id)
+          ? prev.filter((acId) => acId !== id)
+          : [...prev, id];
+      }
     });
   };
-  
-  
+
+  const toggleAccordian = () => {
+    setSingle((prev) => (prev ? false : true));
+  };
+
   return (
     <>
-       <div className="container">
+      <div onClick={toggleAccordian} className="singlle-multiple-accordian">
+        {single ? "Single Accordian" : "Multiple Accordian"}
+      </div> 
+      <div className="container">
         {acc_arr.map((item) => {
           return (
             <MyAccordian
@@ -56,9 +67,6 @@ function App() {
 }
 
 export default App;
-
-
-
 
 const MyAccordian = ({ title, description, isOpen, id, handleSetAcName }) => {
   return (
