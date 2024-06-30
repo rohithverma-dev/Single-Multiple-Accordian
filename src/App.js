@@ -28,7 +28,9 @@ function App() {
 
 
   const handleSetAcName = (id) => {
-    console.log("handleSetAcname function");
+    setAcName((prev) => {
+        return prev.includes(id) ? prev.filter((acId) => acId !== id) : [...prev, id];
+    });
   };
   
   
